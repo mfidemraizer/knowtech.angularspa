@@ -7,8 +7,16 @@ import home from "/js/controllers/HomeController";
 
 export class App {
     initialize() {
-        app.config(function($stateProvider, $urlRouterProvider) {
+        app.constant("settings", Object.freeze({
+            backgroundColor: "red"
+        }));
+        app.value("someValue", 11);
+
+        app.config(function($stateProvider, $urlRouterProvider, userRestClientProvider) {
+            debugger;
             $urlRouterProvider.otherwise("/home");
+
+            userRestClientProvider.serviceUri = "http://domain.com/api/v2/users";
 
             $stateProvider
                 .state("home", {
