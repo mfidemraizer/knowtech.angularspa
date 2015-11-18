@@ -1,8 +1,10 @@
 "use strict";
 
+import fontawesome from "font-awesome";
 import angular from "angular";
 import {app} from "/js/modules";
 import $ from "jquery";
+import master from "/js/controllers/MasterController";
 import home from "/js/controllers/HomeController";
 
 export class App {
@@ -13,7 +15,6 @@ export class App {
         app.value("someValue", 11);
 
         app.config(function($stateProvider, $urlRouterProvider, userRestClientProvider) {
-            debugger;
             $urlRouterProvider.otherwise("/home");
 
             userRestClientProvider.serviceUri = "http://domain.com/api/v2/users";

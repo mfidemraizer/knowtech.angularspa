@@ -3,7 +3,6 @@
 import {services} from "/js/modules";
 
 services.factory("stringHelper", function(settings) {
-	debugger;
 	class StringHelper {
 		capitalizeFirstLetter(someString) {
 			return someString[0].toUpperCase() + someString.substring(1);

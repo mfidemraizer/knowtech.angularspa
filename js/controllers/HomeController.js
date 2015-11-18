@@ -12,7 +12,6 @@ controllers.controller("HomeController", function($scope, $timeout, stringHelper
 
     stringHelper.capitalizeFirstLetter("matias");
 
-    debugger;
     var result = mathService.sumOne(1);
 
     $scope.personName = "";

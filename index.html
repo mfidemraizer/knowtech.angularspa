@@ -2,24 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <script src="/js/lib/system.js"></script>
-  <script src="/js/config.js"></script>
+  <script src="/js/lib/system.js">
+</script>
+  <script src="/js/config.js">
+</script>
   <script>
-    System.import("/js/app.js").then(function() {
-      
-    }, function(err) {
-        console.log(err);
-    });
-  </script>
 
+System.import("/js/app.js").then(function() {
+
+}
+, function(err) {
+    console.log(err);
+}
+);
+</script>
+<link href="styles.css" rel="stylesheet">
   <title>SPA</title>
 </head>
 
 <body>
-  <div id="app">
-    <h1>My SPA</h2>
-
+  <div id="app" ng-controller="MasterController">
+   <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="App bar" ng-click="toggleAppMenu()">
+          <span class="fa fa-bars"></span>
+        </md-button>
+        <h2>
+          <span>Chattify</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="appMenu">
+      <md-toolbar class="md-theme-indigo">        
+        <md-button class="md-icon-button" aria-label="App bar" ng-click="toggleAppMenu()">
+          <span class="fa fa-arrow-circle-o-left"></span>
+        </md-button>
+        <h1 class="md-toolbar-tools">Opciones</h1>
+      </md-toolbar>
+    </md-sidenav>
     <div ui-view></div>
+    </md-content>
   </div>
 </body>
 </html>
