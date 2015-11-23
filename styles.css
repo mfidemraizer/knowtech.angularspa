@@ -1,3 +1,16 @@
 [md-component-id="appMenu"] md-toolbar {
     flex-direction: row;
 }
+
+body {
+	display: flex;
+	align-items: stretch;
+}
+
+#app {
+	flex-grow: 1;
+}
+
+#app > md-content {
+	position: initial;
+}

@@ -18,6 +18,7 @@ System.import("/js/app.js").then(function() {
 </script>
 <link href="styles.css" rel="stylesheet">
   <title>SPA</title>
+  <base href="/" />
 </head>
 
 <body>
@@ -45,6 +46,9 @@ System.import("/js/app.js").then(function() {
         </md-button>
         <h1 class="md-toolbar-tools">Opciones</h1>
       </md-toolbar>
+      <ol>
+        <li ui-sref="friendlist">Mis amigos</li>
+      </ol>
     </md-sidenav>
     <div ui-view></div>
     </md-content>
