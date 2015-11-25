@@ -8,7 +8,7 @@
 <label>Personas</label>
 <input type="text" ng-model="personName" />
 <button ng-click="addPerson()">Add</button>
-
+<p custom-click on-click="addPerson()">Con directiva</p>
 <ol>
     <li ng-repeat="person in persons">
         <input type="text" ng-model="person.name" />

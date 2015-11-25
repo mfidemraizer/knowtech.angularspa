@@ -7,6 +7,7 @@ import $ from "jquery";
 import master from "/js/controllers/MasterController";
 import home from "/js/controllers/HomeController";
 import friendList from "/js/controllers/FriendListController";
+import sampleDirective from "/js/directives/sampleDirective.js";
 
 export class App {
     initialize() {
@@ -17,7 +18,7 @@ export class App {
 
         app.config(function($stateProvider, $locationProvider, $urlRouterProvider, userRestClientProvider) {
             $locationProvider.html5Mode(true);
-            $urlRouterProvider.otherwise("/friendlist");
+            $urlRouterProvider.otherwise("/home");
             
             userRestClientProvider.serviceUri = "http://domain.com/api/v2/users";
 
