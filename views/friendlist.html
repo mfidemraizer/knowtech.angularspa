@@ -1,6 +1,19 @@
+<div>
+	<label>Añade un amigo a tu lista</label>
+	<input type="text" ng-model="newFriendName" />
+	<button ng-click="addFriend()">Añadir</button>
+</div>
+
+<div>
+	<label>Modifica un amigo de tu lista</label>
+	<input type="text" ng-model="selectedFriend.nickname" />
+	<button ng-click="modifyFriend()">Modificar</button>
+</div>
+
+
 <md-list>
-  <md-list-item class="md-2-line" ng-repeat="friend in friends">
-    <div ui-sref="friendlist.detail({ nickname: friend.nickname })" class="md-list-item-text">
+  <md-list-item class="md-2-line" ng-class="{ 'selected': friend == selectedFriend }" ng-repeat="friend in friends" ng-click="selectFriend(friend)">
+    <div ui-sref="friendlist.detail({ nickname: friend.nickname })"  class="md-list-item-text">
       <h3>{{friend.nickname}}</h3>
     </div>
   </md-list-item>
