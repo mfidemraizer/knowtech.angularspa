@@ -2,8 +2,15 @@
 
 import {controllers} from "/js/modules";
 
-controllers.controller("FriendListController", function($scope, $stateParams, $http) {
+controllers.controller("FriendListController", function($scope, $timeout, $stateParams, $http) {
 	$scope.friends = [];
+	$scope.text = "hello world";
+
+	setTimeout(function() {
+		$scope.$apply(function() {
+			$scope.text = "hello world XXXXXXXXXXXXXXXX";
+		});
+	}, 1000);
 
 	$http.get("/api/v1/friends").then(function(response) {
 		$scope.friends = response.data;
@@ -35,4 +42,4 @@ controllers.controller("FriendListController", function($scope, $stateParams, $h
 	}
 });
 
-controllers.$inject = ["$scope", "$stateParams", "$http"];
+controllers.$inject = ["$scope", "$timeout", "$stateParams", "$http"];

@@ -18,7 +18,7 @@ export class App {
 
         app.config(function($stateProvider, $locationProvider, $urlRouterProvider, userRestClientProvider) {
             $locationProvider.html5Mode(true);
-            $urlRouterProvider.otherwise("/friendlist");
+            $urlRouterProvider.otherwise("/home");
             
             userRestClientProvider.serviceUri = "http://domain.com/api/v2/users";
 
